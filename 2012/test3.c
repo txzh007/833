@@ -12,6 +12,7 @@
  *
  * */
 
+
 int main() {
     char str[100] = "";
     int index = 0;
