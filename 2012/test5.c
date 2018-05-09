@@ -33,6 +33,8 @@ int main() {
         if (ch[i] > 0)
             fputc(ch[i], fp);
     }
+
+
     fclose(fp);
     fclose(filea);
     fclose(fileb);
