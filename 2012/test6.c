@@ -3,8 +3,15 @@
 //
 /**
  * 有一篇文章，共有3行文字，每行有60个字符，要求分别求出其中的因为大写字母，数组及其他字符的个数；
+ *
+ * 测试用例：
+ *  j!BO0g&hA6HPL9if73Kh
+ *  DHGds3ccXB6@9ZlJzSWs
+ *  Frs7ww0n0bYfEN@mc1*%
+ *
+ *  大写字母 18  数字 7  其他字符 35  总计60
+ *
  */
-#include <mem.h>
 #include "stdio.h"
 
 int main() {
@@ -22,7 +29,6 @@ int main() {
         }
     }
 
-//    printf("%d", strlen(string));
 
     printf("大写字母：%d个,数字：%d个，其他字符%d个", uppercaseCount, numCount, otherCount);
     fclose(fp);
