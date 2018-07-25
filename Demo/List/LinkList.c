@@ -2,11 +2,10 @@
 #include <malloc.h>
 #include "stdio.h"
 
-
+// 链表数据元素 默认为int类型 并给与别名
 typedef int ElemType;
 
 // 单链表定义
-
 typedef struct LNode {
     ElemType data;
     struct LNode *next;
