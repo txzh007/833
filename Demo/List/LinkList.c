@@ -1,6 +1,5 @@
-
-#include <malloc.h>
 #include "stdio.h"
+#include <malloc.h>
 
 // 链表数据元素 默认为int类型 并给与别名
 typedef int ElemType;
