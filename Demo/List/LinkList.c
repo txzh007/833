@@ -16,7 +16,7 @@ typedef struct LNode {
 // 头插法
 LinkList CreateList1(LinkList L) {
     LNode *s;
-    int x;
+    ElemType x;
     L = (LinkList) malloc(sizeof(LNode));
     L->next = NULL;
     scanf("%d", &x);
@@ -33,8 +33,8 @@ LinkList CreateList1(LinkList L) {
 
 //尾插法
 LinkList CreateList2(LinkList L) {
-    LNode *s, *r;
-    int x;
+    LNode *s, *r;  //尾插法要定义一个节点指针用来指向List的最后一个元素,否则返回的是最后一个节点
+    ElemType x;
 
     L = (LinkList) malloc(sizeof(LNode));
     L->next = NULL;
@@ -55,7 +55,48 @@ LinkList CreateList2(LinkList L) {
     return L;
 }
 
+/**
+ * 按下标来寻找链表元素
+ * @param L 单链表
+ * @param i 链表下标
+ * @return  节点
+ */
+LNode *GetElem(LinkList L, int i) {
+    int j = 1;
+    if (i < 0)
+        return NULL;
+    LNode *node = L->next;
 
+    if (i == 0)
+        return L;
+    while (node && j < i) {
+
+        node = node->next;
+        j++;
+    }
+
+    return node;
+
+
+}
+
+
+/**
+ * 根据元素来获取节点
+ * @param L 单链表
+ * @param e 元素
+ * @return 节点
+ */
+LNode *LocateElem(LinkList L, ElemType e) {
+    LNode *node = L->next;
+    while (node && e != node->data) {
+        node = node->next;
+    }
+    return node;
+
+}
+
+//打印节点
 void printList(LinkList L) {
     LNode *s = L->next;
     while (s != NULL) {
@@ -67,7 +108,7 @@ void printList(LinkList L) {
 
 
 int main() {
-    LinkList list = NULL;
+    struct LNode *list = NULL;
     list = CreateList2(list);
 
     printList(list);
