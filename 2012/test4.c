@@ -7,12 +7,14 @@
 
 #include "stdio.h"
 #include "string.h"
+
 void main() {
     int year, month, day, days = 0;
     printf("请输入年月日\n");
     scanf("%d %d %d", &year, &month, &day);
-    int tempMonth = month;
-    while (tempMonth != 0) {
+    if (year < 0 || month < 1 || month > 13 || day < 1 || day > 31 || day < 1)
+        printf("输入有误\n");
+    while (month--) {
         switch (month - 1) {
             case 11:
             case 9:
@@ -38,10 +40,9 @@ void main() {
                 days += day;
                 break;
         }
-        tempMonth--;
+
     }
-    if (year < 0 || month < 1 || month > 13 || day < 1 || day > 31 || day < 1)
-        printf("输入有误\n");
-    else
-        printf("当前是第%d天", days);
+
+
+    printf("当前是第%d天", days);
 }
